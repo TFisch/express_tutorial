@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+var path = require("path");
+
 
 const urlLogger = (request, response, next) => {
   console.log('Request URL:', request.url);
@@ -24,6 +26,19 @@ app.get('/', (request, response) => {
   // to serve this content
 });
 
+app.get('/sunsets', (request, response) => {
+  response.status(200).json({ "name": "Robbie" })
+});
+
 app.get('/json', (request, response) => {
   response.status(200).json({ "name": "Robbie" });
+});
+
+// app.use(function (req, res, next) {
+//   res.status(404).sendFile('/index.html')
+
+// })
+
+app.get('*', function (req, res) {
+  res.status(404).sendFile(path.join(__dirname + '/page404.html'));
 });
