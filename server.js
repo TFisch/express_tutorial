@@ -34,11 +34,6 @@ app.get('/json', (request, response) => {
   response.status(200).json({ "name": "Robbie" });
 });
 
-// app.use(function (req, res, next) {
-//   res.status(404).sendFile('/index.html')
-
-// })
-
 app.get('*', function (req, res) {
-  res.status(404).sendFile(path.join(__dirname + '/page404.html'));
+  res.status(404).sendFile(path.join(__dirname + '/public/page404.html'));
 });
