@@ -26,12 +26,8 @@ app.get('/', (request, response) => {
   // to serve this content
 });
 
-app.get('/sunsets', (request, response) => {
-  response.status(200).json({ "name": "Robbie" })
-});
-
 app.get('/json', (request, response) => {
-  response.status(200).json({ "name": "Robbie" });
+  response.status(200).json(require('./data'));
 });
 
 app.get('*', function (req, res) {

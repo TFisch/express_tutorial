@@ -1,3 +1,7 @@
-h1 {
+.title {
   color: blue;
+}
+
+.red {
+  color: red;
 }
